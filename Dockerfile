@@ -5,7 +5,8 @@ FROM golang:1.20-alpine
 WORKDIR /app
 
 # Copy the Go module files
-COPY go.mod go.sum ./
+# COPY go.mod go.sum ./
+COPY go.mod ./
 
 # Download dependencies
 RUN go mod download
