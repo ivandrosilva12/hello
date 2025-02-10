@@ -3,7 +3,6 @@ package main
 import (
 	"log"
 	"net/http"
-	"os"
 	"time"
 )
 
@@ -32,9 +31,6 @@ func loggerMiddleware(next http.Handler) http.Handler {
 func main() {
 	// Set the port
 	port := "8085"
-	if envPort := os.Getenv("PORT"); envPort != "" {
-		port = envPort
-	}
 
 	// Create a new ServeMux (router)
 	mux := http.NewServeMux()
